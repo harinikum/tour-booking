@@ -1,0 +1,102 @@
+.main-book1 {
+    text-align: center;
+    padding: 20px; background-image: url(../assets/img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  } 
+   
+ 
+   
+  
+ 
+  .h1two {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the title */
+    position: relative; /* Allows positioning of button */
+    border-radius: 5px;
+  }
+  
+  .back-button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px; /* Moves button to the right side */
+  }
+  
+  .back-button:hover {
+    background-color: #e64a19;
+  }
+  
+
+  
+  .two-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .tour-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 280px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .tour-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .tour-image1 {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .tour-details {
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  .tour-name,
+  .tour-price,
+  .tour-city {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    margin: 5px 0;
+  }
+  
+  .view-button1 {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+  }
+  
+  .view-button1:hover {
+    background-color: #e64a19;
+  }
+  

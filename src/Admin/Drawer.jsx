@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaBookmark, FaCar, FaUserAlt,FaSuitcaseRolling } from 'react-icons/fa'
+import { FaBookmark, FaCar, FaUserAlt,FaSuitcaseRolling ,  FaEye} from 'react-icons/fa'
 import { GrLogout } from 'react-icons/gr'
 import { MdDashboard, MdTwoWheeler } from 'react-icons/md'
 import { Link } from 'react-router-dom'
@@ -12,8 +12,9 @@ function Drawer() {
         <div className="nav-links1">
             <Link to={"/dashboard"} ><a href="#" ><MdDashboard /> Dashboard</a></Link>
             <Link to={"/addpackage"}><a href="#"><FaSuitcaseRolling /> Add Tour packages</a></Link>
-           
+            <Link to={"/viewpackage"}><a href="#"><FaEye /> view Tour packages</a></Link>
             <Link to={'/managebook'} ><a href="#"><FaUserAlt /> Manage booking</a></Link>
+            <Link to={'/viewloginuser'} ><a href="#"><FaUserAlt /> View Users</a></Link>
             <Link to={"/logout"} ><a href="#"><GrLogout /> Logout</a></Link>
         </div>
     </nav>

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios'; 
 import './userlog.css';
+import { useNavigate } from 'react-router-dom';
 
 function Userlogin() {
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
+  const [Error,setError] = useState('')
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -14,17 +17,26 @@ function Userlogin() {
         'http://localhost/tourbackend/controllers/api/User/Get/login.php', 
         payload
       );
-      console.log('Login response:', response.data);
+      console.log('Login response:', response.data,status);
 
-      if (response.status) {
-        window.location.href = '/userpanel';
+     if (response.status == 200) {
+        console.log("worked");
+        if (response.data.status === 1) {
+          setError("Your account is blocked. Please contact support.");
+        } else if (response.data.status === 0) {
+          // localStorage.setItem("user", JSON.stringify(result.user));
+          navigate("/homepage");
+        } else {
+          setError("Invalid login status. Please try again.");
+        }
       } else {
-        alert('Login failed, please check your credentials.');
+        setError(
+          response.data.message || "Your account is blocked. Please contact support."
+        );
       }
-    } 
-    catch (error) {
-      console.error('Error logging in:', error);
-      alert('Invalid User Id & Password.');
+    }
+    catch(error){
+      console.error("error",error)
     }
   };
 
@@ -54,7 +66,7 @@ function Userlogin() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-
+          {Error && <p className="error-text">{Error}</p>}
           <button className="bt2" type="submit">
             Log In
           </button>

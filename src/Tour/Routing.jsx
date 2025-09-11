@@ -10,6 +10,8 @@ import Userslist from '../Admin/Userslist'
 import Managebook from '../Admin/Managebook'
 import Logout from '../Admin/Logout'
 import Bookplace from '../User/Bookplace'
+import Viewpackage from '../Admin/Viewpackage'
+import ViewLoginuser from '../Admin/ViewLoginuser'
 
 function Routing() {
   return (
@@ -24,9 +26,11 @@ function Routing() {
         <Routes>
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/addpackage' element={<Addpackage />} />
+          <Route path='/viewpackage' element={<Viewpackage />} />
           <Route path='/editpackage' element={<Editpackage />} />
           <Route path='/userlist' element={<Userslist />} />
           <Route path='/managebook' element={<Managebook />} />
+          <Route path='/viewloginuser' element={<ViewLoginuser />} />
           <Route path={"/twodeatail/:id"} element={<Bookplace />} />
           <Route path='/logout' element={<Logout />} />
         </Routes>

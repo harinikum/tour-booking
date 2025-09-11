@@ -4,7 +4,7 @@ import "./userland.css"
 function Userlanding() {
   return (
     <>
-           <div className="user1-main">
+    <div className="user1-main">
     <nav className="navbar-user">
         <div className="navbar-container">
             <div className="logo">Tour Package Booking System</div>

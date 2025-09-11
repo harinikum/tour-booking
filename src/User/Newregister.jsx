@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // Import Axios
+import axios from 'axios'; 
 import "./newreg.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // ✅ import useNavigate
 
 function Newregister() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // ✅ create navigate function
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -17,11 +18,12 @@ function Newregister() {
         'http://localhost/tourbackend/controllers/api/User/post/register.php', 
         payload
       );
+      console.log(",,",response)
       
       if (response.status === 200) {
         alert('User registered successfully!');
         setTimeout(() => {
-          window.location.href = '/userlogin'; 
+          navigate('/userlogin'); // ✅ use navigate instead of window.location
         }, 100); 
       } else {
         alert('Registration failed. Please try again.');

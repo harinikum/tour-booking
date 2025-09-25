@@ -4,7 +4,7 @@ import { AiFillDelete } from 'react-icons/ai'
 function Userslist() {
   return (
     <>
-        <div className="ud">
+    <div className="ud">
     <div className="containeruser">
         <table className="users-table">
             <thead>
